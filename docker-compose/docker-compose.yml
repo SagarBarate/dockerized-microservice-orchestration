@@ -1,0 +1,96 @@
+
+version: '3.8'
+services:
+  mysql:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: Sagar@123
+      MYSQL_DATABASE: reservation
+      MYSQL_USER: root
+      MYSQL_PASSWORD: Sagar@123
+    ports:
+      - "3307:3306"
+    networks:
+      - flightservices
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  springboot-app:
+    image: sagarbarate/flightservices-appv3
+
+    ports:
+      - "8080:8080"
+    environment:
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_USER: root
+      DB_PASSWORD: Sagar@123
+    networks:
+      - flightservices
+    volumes:
+      - ./app/logs:/app/logs
+    deploy:
+      replicas: 3
+      update_config:
+        parallelism: 2
+        delay: 10s
+      restart_policy:
+        condition: on-failure
+
+  elasticsearch:
+    image: elasticsearch:8.16.1
+    environment:
+      discovery.type: single-node
+      ES_JAVA_OPTS: "-Xms512m -Xmx512m"
+    networks:
+      - flightservices
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    volumes:
+      - es_data:/usr/share/elasticsearch/data/
+    deploy:
+      restart_policy:
+        condition: on-failure
+
+  logstash:
+    image: logstash:8.16.1
+    volumes:
+      - ./logstash.conf:/logstash.conf
+      - ./app/logs:/app/logs
+    command: logstash -f /logstash.conf
+    networks:
+      - flightservices
+    depends_on:
+      - elasticsearch
+    ports:
+      - '9600:9600'
+    environment:
+      LS_JAVA_OPTS: "-Xmx256m -Xms256m"
+    deploy:
+      restart_policy:
+        condition: on-failure
+
+  kibana:
+    image: kibana:8.16.1
+    networks:
+      - flightservices
+    ports:
+      - "5601:5601"
+    depends_on:
+      - elasticsearch
+    volumes:
+      - ./kibana.yml:/usr/share/kibana/config/kibana.yml:ro,Z
+    environment:
+      KIBANA_SYSTEM_PASSWORD: changeme
+    deploy:
+      restart_policy:
+        condition: on-failure
+
+networks:
+  flightservices:
+    external: true
+
+volumes:
+  mysql_data:
+  es_data:

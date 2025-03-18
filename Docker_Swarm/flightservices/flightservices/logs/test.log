@@ -1,0 +1,36 @@
+test logs
+2024-11-28 21:42:44 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.tus.flight.FlightservicesApplicationTests]: FlightservicesApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-11-28 21:42:44 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.tus.flight.FlightservicesApplication for test class com.tus.flight.FlightservicesApplicationTests
+2024-11-28 21:42:45 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-11-28 21:42:45 [main] INFO  c.t.f.FlightservicesApplicationTests - Starting FlightservicesApplicationTests using Java 21.0.4 with PID 13300 (started by Sagar in C:\Users\Sagar\Downloads\flightservices\flightservices)
+2024-11-28 21:42:45 [main] INFO  c.t.f.FlightservicesApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-11-28 21:42:48 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-28 21:42:48 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 106 ms. Found 1 JPA repository interfaces.
+2024-11-28 21:42:49 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.16.3 by Redgate
+2024-11-28 21:42:49 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2024-11-28 21:42:49 [main] INFO  o.f.c.i.license.VersionPrinter - 
+2024-11-28 21:42:51 [main] INFO  o.f.c.i.d.base.BaseDatabaseType - Database: jdbc:mysql://localhost:3306/reservation (MySQL 8.0)
+2024-11-28 21:42:51 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Schema history table `reservation`.`flyway_schema_history` does not exist yet
+2024-11-28 21:42:51 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 0 migrations (execution time 00:00.056s)
+2024-11-28 21:42:51 [main] WARN  o.f.core.internal.command.DbValidate - No migrations found. Are your locations set up correctly?
+2024-11-28 21:42:51 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Creating Schema History table `reservation`.`flyway_schema_history` with baseline ...
+2024-11-28 21:42:51 [main] INFO  o.f.core.internal.command.DbBaseline - Successfully baselined schema with version: 1
+2024-11-28 21:42:51 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema `reservation`: 1
+2024-11-28 21:42:51 [main] INFO  o.f.core.internal.command.DbMigrate - Schema `reservation` is up to date. No migration necessary.
+2024-11-28 21:42:51 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-11-28 21:42:51 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1716c037
+2024-11-28 21:42:51 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-11-28 21:42:52 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-28 21:42:52 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.9.Final
+2024-11-28 21:42:52 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2024-11-28 21:42:53 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+2024-11-28 21:42:53 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-28 21:42:53 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+2024-11-28 21:42:55 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-11-28 21:42:55 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-28 21:42:55 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-28 21:42:56 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-11-28 21:42:56 [main] INFO  c.t.f.FlightservicesApplicationTests - Started FlightservicesApplicationTests in 11.76 seconds (process running for 15.533)
+2024-11-28 21:42:58 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-28 21:42:58 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-11-28 21:42:58 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

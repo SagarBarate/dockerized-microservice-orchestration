@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: flightservice
+spec:
+    replicas: 2
+    selector:
+        matchLabels:
+            app: flightservice
+    template:
+        metadata:
+            labels:
+                app: flightservice
+        spec:
+            containers:
+                - name: flightservice
+                  image: sagarbarate/flightservice-applogv1:latest
+                  ports:
+                      - containerPort: 8080
+                  env:
+                      - name: DB_HOST
+                        value: mysql
+                      - name: DB_PORT
+                        value: "3306"
+                      - name: DB_USER
+                        value: root
+                      - name: DB_PASSWORD
+                        value: Sagar@123
